@@ -1,0 +1,15 @@
+I. Quando se usa SUN RPC é gerado código para converter os dados de e para
+um formato de rede. O que acontece quando se usa RMI?
+
+Em Java RMI esse processo é feito pelo Proxy e seus stubs que representam o 
+objeto remoto no cliente. O RMI torna-se, assim, transparente para o cliente, podendo esconder os detalhes de tradução de referências a objetos e a conversão e serialização dos parâmetros.
+O stub agem para o cliente como um gateway e quando se invoca um método do stub
+ele irá initializar a conexão com a JVM (java virtual machine) remota, escreve e transmite os parâmetros (marshals) para a JVM remota e, quando recebe o retorno ou exception, lê-os (unmarshals) e envia-os para quem o invocou.
+
+
+II. Das classes e interfaces Java que usou, quais as que pertencem apenas ao
+cliente, apenas ao servidor e a ambas?
+
+    Cliente: Game.java                     (UI que invoca métodos de TTTService)
+    Servidor: TTT.java e Application.java  (Implementação da interface remota)
+    Ambas: TTTService.java                 (Interface remota)

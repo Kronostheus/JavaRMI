@@ -1,0 +1,7 @@
+Deverão ser abertos dois terminais: um para o servidor e um para o cliente.
+
+O servidor é executado através do comando:
+    mvn install exec:java
+
+O cliente é executado através do comando:
+    mvn compile exec:java
